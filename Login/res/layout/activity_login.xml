@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_wallpaper1" >
+    
+    <ImageView
+        android:id="@+id/login_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/login_logo" />
+        
+	<LinearLayout 
+	    android:id="@+id/linear1"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@id/login_logo"
+	    android:layout_marginTop="30dp"
+	    android:layout_marginLeft="30dp"
+	    android:layout_marginRight="30dp"
+	    android:orientation="vertical" >
+	    <LinearLayout 
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:background="@drawable/login_top_background">
+	        <TextView 
+	            android:layout_marginLeft="12dp"
+	            android:layout_gravity="center_vertical"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="username:"
+	            android:textColor="@color/black"
+	            android:textSize="15sp" />
+	        <EditText 
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="center_vertical"
+		        android:layout_marginLeft="10dp"
+		        android:hint="e-mail address"
+		        android:textSize="15sp"
+		        android:background="@null"
+		        android:singleLine="true" />
+	    </LinearLayout>
+	    <LinearLayout 
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:background="@drawable/login_bottom_background" >
+	        <TextView 
+	            android:layout_marginLeft="12dp"
+	            android:layout_gravity="center_vertical"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="password:"
+	            android:textColor="@color/black"
+	            android:textSize="15sp" />
+	        <EditText
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="center_vertical"
+		        android:layout_marginLeft="10dp"
+		        android:layout_marginRight="8dp"
+		        android:background="@null"
+		        android:textSize="15sp"
+		        android:singleLine="true"
+		        android:inputType="textPassword" />
+	    </LinearLayout>
+	</LinearLayout>
+	
+    <Button
+        android:id="@+id/login"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/linear1"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/btn_login_selector"
+        android:text="Log in"
+        android:textColor="@color/white" />
+	
+    <Button
+        android:id="@+id/signup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/login"
+        android:layout_marginTop="21dp"
+        android:background="@drawable/btn_register_selector"
+        android:text="Sign up"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/allrightsreserved"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="76dp"
+        android:text="© 2014 MovMapp All Rights Reserved" 
+        android:textColor="@color/black"
+        android:gravity="center" />
+
+</RelativeLayout>
