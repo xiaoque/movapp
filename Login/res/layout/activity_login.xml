@@ -34,6 +34,8 @@
 	            android:textColor="@color/black"
 	            android:textSize="15sp" />
 	        <EditText 
+	            android:id="@+id/login_email"
+	            android:inputType="textEmailAddress"
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
 		        android:layout_gravity="center_vertical"
@@ -55,21 +57,24 @@
 	            android:text="password:"
 	            android:textColor="@color/black"
 	            android:textSize="15sp" />
+
 	        <EditText
-		        android:layout_width="fill_parent"
-		        android:layout_height="wrap_content"
-		        android:layout_gravity="center_vertical"
-		        android:layout_marginLeft="10dp"
-		        android:layout_marginRight="8dp"
-		        android:background="@null"
-		        android:textSize="15sp"
-		        android:singleLine="true"
-		        android:inputType="textPassword" />
+	            android:id="@+id/login_pass"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="10dp"
+	            android:layout_gravity="center"
+	            android:background="@null"
+	            android:ems="10"
+	            android:inputType="textPassword"
+	            android:singleLine="true"
+	            android:textSize="15sp" />
+
 	    </LinearLayout>
 	</LinearLayout>
 	
     <Button
-        android:id="@+id/login"
+        android:id="@+id/btn_login"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -80,19 +85,18 @@
         android:textColor="@color/white" />
 	
     <Button
-        android:id="@+id/signup"
+        android:id="@+id/btn_signup"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/login"
+        android:layout_below="@+id/btn_login"
         android:layout_marginTop="21dp"
         android:background="@drawable/btn_register_selector"
         android:text="Sign up"
         android:textColor="@color/black" />
 
     <TextView
-        android:id="@+id/allrightsreserved"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
