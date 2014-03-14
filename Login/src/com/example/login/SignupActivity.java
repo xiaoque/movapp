@@ -75,6 +75,7 @@ public class SignupActivity extends Activity{
 			return true;
 		}
 		else{
+			et.requestFocus();
 			et.setError(hint);
 			return false;
 		}
@@ -82,6 +83,7 @@ public class SignupActivity extends Activity{
 	
 	public boolean isEmpty(EditText et, String hint){
 		if(et.getText()==null ||"".equals( et.getText().toString().trim())){
+			et.requestFocus();
 			et.setError(hint);
 			return true;
 		}
@@ -94,6 +96,7 @@ public class SignupActivity extends Activity{
 			return true;
 		}
 		else{
+			et2.requestFocus();
 			et2.setError(hint);
 			return false;
 		}

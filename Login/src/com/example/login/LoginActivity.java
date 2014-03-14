@@ -85,6 +85,7 @@ public class LoginActivity extends Activity{
 			return true;
 		}
 		else{
+			et.requestFocus();
 			et.setError(hint);
 			return false;
 		}
@@ -92,6 +93,7 @@ public class LoginActivity extends Activity{
 	
 	public boolean isEmpty(EditText et, String hint){
 		if(et.getText()==null ||"".equals( et.getText().toString().trim())){
+			et.requestFocus();
 			et.setError(hint);
 			return true;
 		}
