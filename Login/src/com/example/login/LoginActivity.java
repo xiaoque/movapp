@@ -1,5 +1,8 @@
 package com.example.login;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -46,18 +49,53 @@ public class LoginActivity extends Activity{
 	private OnClickListener loginListener = new OnClickListener() {
 		@Override
 		public void onClick(View v) {
+			if(isEmpty(mail,"please fill mail address")){
+				return ;
+			}
+			if(isEmpty(pass,"please fill password")){
+				return;
+			}
 			String str_mail = mail.getText().toString().trim();
 			String str_pass = pass.getText().toString().trim();
-			Toast.makeText(LoginActivity.this, str_mail, 1000).show();
-			Toast.makeText(LoginActivity.this, str_pass, 1000).show();
+			if(!isEmailValid(mail,"valide email")){
+				return ;
+			}
+
 			Intent intent = new Intent();
 			intent.setClass(LoginActivity.this, ScanActivity.class);
 			startActivity(intent);
 		}
 	};
 	
-	public int testInput(String strmail, String strpass){
-		return 0;
+	public boolean isEmailValid(EditText et,String hint) {
+		String email = et.getText().toString().trim();
+		String regExpn = "^(([\\w-]+\\.)+[\\w-]+|([a-zA-Z]{1}|[\\w-]{2,}))@"
+				+ "((([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?"
+				+ "[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\."
+				+ "([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?"
+				+ "[0-9]{1,2}|25[0-5]|2[0-4][0-9])){1}|"
+				+ "([a-zA-Z]+[\\w-]+\\.)+[a-zA-Z]{2,4})$";
+
+		CharSequence inputStr = email;
+
+		Pattern pattern = Pattern.compile(regExpn, Pattern.CASE_INSENSITIVE);
+		Matcher matcher = pattern.matcher(inputStr);
+
+		if (matcher.matches()){
+			return true;
+		}
+		else{
+			et.setError(hint);
+			return false;
+		}
+	}
+	
+	public boolean isEmpty(EditText et, String hint){
+		if(et.getText()==null ||"".equals( et.getText().toString().trim())){
+			et.setError(hint);
+			return true;
+		}
+		return false;
 	}
 
 }
