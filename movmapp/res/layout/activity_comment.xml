@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/commentTitle"
+        android:layout_width="238dp"
+        android:layout_height="68dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
+        android:text="Comment"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="50sp" />
+
+    <Button
+        android:id="@+id/submitcomment"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignRight="@+id/comment"
+        android:layout_alignTop="@+id/commentTitle"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/submitcomment" />
+
+    <Button
+        android:id="@+id/cancelcomment"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignBaseline="@+id/submitcomment"
+        android:layout_alignBottom="@+id/submitcomment"
+        android:layout_alignLeft="@+id/comment"
+        android:background="@drawable/cancelcomment" />
+
+    <RatingBar
+        android:id="@+id/rate"
+        style="@style/MyRatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/submitcomment"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="42dp"
+        android:numStars="5"
+        android:paddingLeft="0dp"
+        android:stepSize="1.0" />
+
+        <EditText
+        android:id="@+id/comment"
+        android:layout_width="514dp"
+        android:layout_height="422dp"
+        android:layout_below="@+id/rate"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="69dp"
+        android:background="@drawable/biankuang"
+        android:ems="10"
+        android:inputType="textMultiLine" >
+        <requestFocus />
+    </EditText>
+    
+</RelativeLayout>
