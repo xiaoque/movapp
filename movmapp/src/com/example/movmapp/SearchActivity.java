@@ -1,5 +1,7 @@
 package com.example.movmapp;
 
+import com.google.zxing.client.android.CaptureActivity;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +10,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class SearchActivity extends Activity {
 
@@ -50,7 +53,9 @@ public class SearchActivity extends Activity {
 	private OnClickListener qrcodeListener = new OnClickListener() {
 		@Override
 		public void onClick(View v) {
-
+			Intent intent = new Intent(SearchActivity.this,
+					CaptureActivity.class);
+			startActivityForResult(intent, 1);
 		}
 	};
 	private OnClickListener showallListener = new OnClickListener() {
@@ -61,4 +66,22 @@ public class SearchActivity extends Activity {
 			SearchActivity.this.startActivity(intent);
 		}
 	};
+	
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+		switch (requestCode) {
+		case 1:
+			if (resultCode == RESULT_OK) {
+				String result = intent.getStringExtra("scan_result");
+				Toast.makeText(SearchActivity.this, "Scan Result:" + result,
+						Toast.LENGTH_SHORT).show();
+			} else if (resultCode == RESULT_CANCELED) {
+				Toast.makeText(SearchActivity.this, "Scan Result:" + "error",
+						Toast.LENGTH_SHORT).show();
+			}
+			break;
+		default:
+			break;
+		}
+}
 }
